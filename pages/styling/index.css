@@ -1,0 +1,91 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script&family=Lato&family=Raleway&display=swap");
+
+body
+{
+    height: 100vh;
+    width: auto;
+    background-color: rgb(250, 186, 179);
+}
+
+#mainDiv
+{
+    display: flex;
+    flex-direction: column;
+}
+
+/*---------------------------header------------------------------*/
+
+header
+{
+    background-color:rgb(214, 140, 132);
+    height: 5rem;
+    width: 100vw;
+    margin-bottom: 5rem;
+}
+
+#headerText
+{
+    font-family: 'Dancing Script', cursive;
+    font-size: 3em;
+    text-align: center;
+    color: rgb(221, 215, 255);
+}
+
+/*---------------------------Main------------------------------*/
+
+/*----------------Form--------------------*/
+form
+{
+    margin-top: 1em;
+    font-family: 'Mulish', sans-serif;
+}
+
+#locationInput
+{
+    width:100%;
+    margin-bottom: 1em;
+}
+
+#inputContainer
+{
+    display: flex;
+    justify-content: space-between;
+}
+
+.average-inputs
+{
+    display: flex;
+    flex-direction: column;
+}
+
+/*-----------------Table-------------------*/
+
+#storeTable
+{
+    align-self: center;
+    margin-top: 3em;
+}
+
+/*---------------------------Footer------------------------------*/
+
+footer
+{
+    position: absolute;
+    bottom: 0;
+    margin-top: auto;
+    background-color:slateblue;
+    height: 5rem;
+    width: 100vw;
+    margin-bottom: 0;
+}
+
+#footerText
+{
+    font-family: 'Mulish', sans-serif;
+    font-size: 3em;
+    text-align: center;
+    color: rgb(221, 215, 255);
+}
