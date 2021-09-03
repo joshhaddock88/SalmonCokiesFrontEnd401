@@ -1,39 +1,58 @@
-import React, {useState} from "react";
-import Hours from "./Data.js"
+  
+import { useState } from "react";
 
-function Table(props) {
-    
-    let hours = ['6am', '7am', '8am', '9am', '10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '7pm'];
-    let hourlySales = [48, 42, 30, 24, 42, 24, 36, 42, 42, 48, 36, 42, 24, 36];
-    return (
-        <>
-                <div id="storeTable">
-                    <table class="rounded-lg border-2 border-opacity-100 border-purple-400 bg-purple-100">
-                        <tr>
-                            <th>Location</th>
-                            {hours.map((hours, idx) => 
-                            <th key={idx} class="rounded-lg border-2 border-opacity-100 border-purple-400">{hours}</th>
-                            )}
-                            <th class="rounded-lg border-2 border-opacity-100 border-purple-400">Totals</th>
-                        </tr>
-                        {
-                            props.stores.map((store, idx) =>
-                            <tr>
-                                <td key={idx} class="rounded-lg border-2 border-opacity-100 border-purple-400">{store.locations}</td>
+function Table({stores, hoursOpen, deleteStore}) {
 
-                                {hourlySales.map((sales, idx) => 
-                                <td key={idx}>{sales}</td>
-                                )}
-                            </tr>
-                            )
-                        }
-                        <tr>
-                            <th class="rounded-lg border-2 border-opacity-100 border-purple-400">Totals</th>
-                        </tr>
-                    </table>
-                </div>
-        </>
-    )
+  console.log(stores);
+  const sales = stores.map(store=>store.hourlySales)
+  let dayTotal = 0;
+  sales.forEach(storeArr=>dayTotal+=storeArr.reduce((a,b)=>a+b,0));
+
+  return(
+    stores.length ?
+    <>
+      <link rel="stylesheet" href="https://fonts.google.com/icons?selected=Material%20Icons%20Outlined%3Adelete%3A"/>
+      <table class="table-auto">
+        <thead>
+          <tr>
+            <th>Location</th>
+            {hoursOpen.map((hour, idx)=>
+            <th key={idx}>{hour}</th>  
+            )}
+            <th>Day Total</th>
+            <th>Remove Store</th>
+          </tr>
+        </thead>
+        <tbody>
+          {stores.map((store, idx)=>
+          <tr key={idx}>
+            <td class="location">{store.location}</td>
+            {sales[idx].map(sales=>
+              <td>{sales}</td>
+              )}
+            <td>{sales[idx].reduce((a, b) => a + b, 0)}</td>
+            <td><button class="deleteButton" onClick={()=>deleteStore(store.id)}>delete</button></td>
+          </tr>
+          )}
+        </tbody>
+        <tfoot>
+        <tr>
+          <td>Totals</td>
+            {hoursOpen.map((time, idx)=>{
+              let hourTotal = 0;
+              sales.forEach(store=>{
+                hourTotal+=store[idx];
+              });
+              return <td>{hourTotal}</td>
+            })}
+            <td>{dayTotal}</td>
+          </tr>
+        </tfoot>
+      </table>
+    </>
+    :
+    <h3>There is nothing to display</h3>
+  )
 }
 
 export default Table

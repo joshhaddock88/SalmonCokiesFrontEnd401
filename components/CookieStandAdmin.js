@@ -1,30 +1,54 @@
-import Footer from './Footer.js'
-import Head from './Head.js'
-import Header from './Header.js'
-import Main from './Main.js'
+import React, {useState} from 'react';
 
-function CookieStandAdmin() {
-    // const[store, setStore] = useState({});
-    // const[stores, setStores] = useState([]);
+class CookieStandAdmin extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            ownder: 'Joshua Haddock'
+        }
+    }
 
-    // const addStore = (newStore) => {
-    //     setStore(newStore);
-    //     setStores([...stores, newStore]);
-    //     console.log(stores);
-    // }
+    handleChange = (e) => {
+        e.preventDefault();
+        this.setState({...this.State,[e.target.name]: e.target.value})
+    }
 
-    
-    return (
-        <>
-        <Head/>
-        <Header/>
-        <div>
-            <Main/>
-            {/* <pre>{JSON.stringify(store, undefine, 2)}</pre> */}
-        </div>
-        <Footer/>
-        </>
-    )
+    handleSubmit = (e) => {
+        e.preventDefault();
+        this.props.newStore(this.state);
+        e.target.reset();
+    }
+
+    render() {
+        return (
+            <>
+               <form onSubmit={this.handleSubmit}>
+                <label>Location</label>
+                <input id="location" name="location" onChange={this.handleChange}></input>
+                <br/>
+                
+                <div id="inputContainer">
+                    <div class="average-inputs">
+                        <label>Minimum Customer per Hour</label>
+                        <input class="average-inputs" name="minimumCustomers" onChange={this.handleChange}></input>
+                    </div>
+                    
+                    <div class="average-inputs">
+                        <label>Maximum Customer per Hour</label>
+                        <input class="average-inputs" name="maximumCustomers" onChange={this.handleChange}></input>
+                    </div>
+                    
+                    <div>
+                        <label>Average Cookies per Sale</label>
+                        <input class="average-inputs" name="averageCookiePerSale" onChange={this.handleChange}></input>
+                    </div>
+
+                    <button id="formSubmit" type="submit">Submit</button>
+                </div>
+            </form> 
+            </>
+        )
+    }
 }
 
 export default CookieStandAdmin;
