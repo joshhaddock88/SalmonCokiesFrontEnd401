@@ -1,6 +1,7 @@
 # Salmon Cookies API
 
 > Creating our Salmon Cookies website in Nest.js and connecting it to an API.
+> Not currently deployed. Will have to be pulled down and run from your local machine.
 
 ## Table of Contents
 
