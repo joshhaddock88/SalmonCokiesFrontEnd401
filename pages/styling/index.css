@@ -5,42 +5,129 @@
 
 body {
     font-family: Arial, Helvetica, sans-serif;
-    background-color: cornflowerblue;
+    background-color: rgb(250, 186, 179);
     padding: 0px;
   }
-  header {
-    border: black solid 2px;
-    margin: 0px;
-  }
-  form {
-    max-width: 80%;
-    margin: auto;
-    margin-top: 60px;
-    background-color: blue;
+
+h1 {
+font-family: 'Dancing Script', cursive;
+font-size: 2em;
+}
+
+h2 {
+font-family: 'Dancing Script', cursive;
+font-size: 1.5em;
+}
+
+a {
+font-family: 'Dancing Script', cursive;
+font-size: 1.2em;
+color: rgb(0, 58, 58);
+}
+
+header {
+border: black solid 2px;
+margin: 0px;
+}
+
+form {
+max-width: 80%;
+margin: auto;
+margin-top: 60px;
+background-color:rgb(255, 178, 169);
+border: 3px solid rgb(1, 82, 82);
+border-radius: 5px;
+padding: 20px;
+}
+
+form * {
+padding: 3px;
+margin-top: 8px;
+}
+
+fieldset {
+border: 3px solid rgb(1, 82, 82);
+padding: 5px;
+margin-bottom: 10px;
+border-radius: 5px;
+background-color: rgb(255, 178, 169);
+}
+
+input {
     border-radius: 5px;
-    padding: 20px;
-  }
-  form * {
-    padding: 3px;
-    margin-top: 8px;
-  }
-  label {
-    display: inline;
-    color:cornsilk;
-    margin-top: 5px;
-  }
-  input {
-    padding-left: 20px;
-  }
-  footer {
-    background-color: blue; 
-  }
-  
-  table {
-    border: black solid 1px;
-    margin:auto;
-    margin-top: 20px;
-  }
-  table * {
-    border: black solid 1px;
-  }
+}
+
+#formSubmit {
+margin-top: 10px;
+margin-left: 10px;
+padding-left: 4px;
+padding-right: 4px;
+font-family: 'Raleway', sans-serif;
+background-color: rgb(1, 82, 82);
+border-radius: 5px;
+color: cornsilk;
+}
+
+.deleteButton {
+display: block;
+margin-right: auto;
+margin-left: auto;
+padding: 2px;
+font-family: 'Raleway', sans-serif;
+background-color: rgb(1, 82, 82);
+border-radius: 5px;
+color: cornsilk;
+}
+
+label {
+display: inline;
+color:cornsilk;
+margin-top: 5px;
+}
+
+table {
+margin-top: 5px;
+margin-bottom: 10px;
+border: 1px solid rgb(20, 6, 5);
+background-color: rgb(226, 126, 115);
+}
+
+table * {
+background-color: rgb(226, 126, 115);
+margin: 1px;
+padding: 1px;
+}
+
+.location {
+  padding: 3px;
+}
+
+th {
+text-align: left;
+color: rgb(54, 28, 25);
+}
+
+td {
+color: rgb(0, 41, 41);
+}
+
+input {
+padding-left: 20px;
+}
+footer {
+background-color: rgb(192, 110, 101); 
+}
+
+.footerText{
+font-family: 'Raleway', sans-serif;
+font-size: 1em;
+}
+
+table {
+border: black solid 1px;
+margin:auto;
+margin-top: 20px;
+}
+table * {
+border: black solid 1px;
+}

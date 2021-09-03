@@ -4,42 +4,27 @@ import Footer from '../components/Footer'
 import {useState, useEffect} from 'react'
 import axios from 'axios';
 
-function Home() {
-  const[store, setStore] = useState({});
+export default function Home() {
   const[stores, setStores] = useState([]);
-  const newStore = (store) => {
-    setStore(store);
-    setStores([...stores, store]);
-  }
+  
+  const newStore = async(store) => {
+    store.avgSale = Number(store.avgSale);
+    store.maxCustomers = Number(store.maxCustomers);
+    store.minCustomers = Number(store.minCustomers);
 
-  const getStoresTest = () => {
-    const hourlyChange = [0.5, 0.75, 1.0, 0.6, 0.8, 1.0, 0.7, 0.4, 0.6, 0.9, 0.7, 0.5, 0.3, 0.4];
-
-    function CookieStore (location, minCustomers, maxCustomers, avgSale) {
-      this.location = location;
-      this.minCustomers = minCustomers;
-      this.maxCustomers = maxCustomers;
-      this.avgSale = avgSale;
-      this.hourlySales = hourlyChange.map(change=> getRandomSales(this, flux));
-    }
-
-    function getRandomSales(store, change) {
-      let sales = Math.floor(change*store.avgSale + Math.floor(Math.random() *(store.maxCustomers - store.minCustomers) + store.minCustomers));
-      return sales;
-    }
-    const storesList = [
-      new CookieStore('Seattle', 23, 65, 6.3),
-      new CookieStore('Tokyo', 3, 24, 1.2),
-      new CookieStore('Dubai', 11, 38, 3.7),
-      new CookieStore('Paris', 20, 38, 2.3),
-      new CookieStore('Lima', 2, 16, 4.6)
-    ];
-    setStores(storesList);
+    const response = await axios.post('https://salmon-cookie-api.azurewebsites.net/api/Store', store);
+    console.log(response.data);
+    await getStores();
   }
 
   const getStores = async () => {
     const response = await axios.get('https://salmon-cookie-api.azurewebsites.net/api/Store');
     setStores(response.data);
+  }
+
+  const deleteStore = async(id) => {
+    const response = await axios.delete(`https://salmon-cookie-api.azurewebsites.net/api/Store/${id}`);
+    await getStores();
   }
 
   useEffect(()=>{
@@ -50,10 +35,8 @@ function Home() {
   return (
     <>
       <Header/>
-      <Main/>
-      <Footer/>
+      <Main newStore={newStore} stores={stores} deleteStore={deleteStore}/>
+      <Footer stores={stores}/>
     </>
   );
 }
-
-export default Home;

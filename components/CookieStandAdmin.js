@@ -24,7 +24,7 @@ class CookieStandAdmin extends React.Component {
             <>
                <form onSubmit={this.handleSubmit}>
                 <label>Location</label>
-                <input id="location" placeholder="Enter" name="location" onChange={this.handleChange}></input>
+                <input id="location" name="location" onChange={this.handleChange}></input>
                 <br/>
                 
                 <div id="inputContainer">

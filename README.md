@@ -1,29 +1,59 @@
-# Next.js + Tailwind CSS Example
+# Salmon Cookies API
 
-This example shows how to use [Tailwind CSS](https://tailwindcss.com/) [(v2.2)](https://blog.tailwindcss.com/tailwindcss-2-2) with Next.js. It follows the steps outlined in the official [Tailwind docs](https://tailwindcss.com/docs/guides/nextjs).
+> Creating our Salmon Cookies website in Nest.js and connecting it to an API.
 
-It uses the new [`Just-in-Time Mode`](https://tailwindcss.com/docs/just-in-time-mode) for Tailwind CSS.
+## Table of Contents
 
-## Preview
+* [General Info](#general-information)
+* [Technologies Used](#technologies-used)
+* [Features](#features)
+* [Screenshots](#screenshots)
+* [Setup](#setup)
+* [Usage](#usage)
+* [Project Status](#project-status)
+* [Room for Improvement](#room-for-improvement)
+* [Acknowledgements](#acknowledgements)
+* [Contact](#contact)
+* [License](#license)
 
-Preview the example live on [StackBlitz](http://stackblitz.com/):
+## General Information
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/vercel/next.js/tree/canary/examples/with-tailwindcss)
+* Continuation of a project created in 201.
+* Project was originally made in vanilla JS without any API connection.
+* This is my first attempt at using Next.js
 
-## Deploy your own
+## Technologies Used
 
-Deploy the example using [Vercel](https://vercel.com?utm_source=github&utm_medium=readme&utm_campaign=next-example):
+* Next.js
+* Tailwinds
+* CSS
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/git/external?repository-url=https://github.com/vercel/next.js/tree/canary/examples/with-tailwindcss&project-name=with-tailwindcss&repository-name=with-tailwindcss)
+## Features
 
-## How to use
+* Post, Get, and Delete from API using local server.
 
-Execute [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app) with [npm](https://docs.npmjs.com/cli/init) or [Yarn](https://yarnpkg.com/lang/en/docs/cli/create/) to bootstrap the example:
 
-```bash
-npx create-next-app --example with-tailwindcss with-tailwindcss-app
-# or
-yarn create next-app --example with-tailwindcss with-tailwindcss-app
-```
+## Setup
 
-Deploy it to the cloud with [Vercel](https://vercel.com/new?utm_source=github&utm_medium=readme&utm_campaign=next-example) ([Documentation](https://nextjs.org/docs/deployment)).
+Make sure you have npm and axios installed. Pull down this repo, run **npm run dev** and navigate to **localhost3000** in your web browser.
+
+## Usage
+
+Not much case use. This was mostly just an experiment to see how to create a next app along with riggin an React app to a SQL database instead of a Mongo.
+
+
+## Project Status
+
+Project is: Complete
+
+## Acknowledgements
+
+Assisted by: John Cokos, Steven Boston, Ben Arno, Benjamin Ibarra.
+
+## Contact
+
+Created by [Joshua Haddock](https://www.linkedin.com/in/joshuahaddock/) - feel free to contact me!
+
+## License
+
+This project is open source and available under the [MIT License](./LICENSE).

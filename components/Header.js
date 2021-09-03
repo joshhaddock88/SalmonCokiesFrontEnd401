@@ -5,7 +5,7 @@ function Header() {
         <>
             <header>
                 <h1 id="headerText">Cookie Stand Admin</h1>
-                <Link href="/overview"><a>Overview</a></Link>
+                <Link id="overView" href="/overview"><a>Overview</a></Link>
             </header>
         </>
     )
