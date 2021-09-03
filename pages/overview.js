@@ -1,18 +1,11 @@
-import Footer from '../components/Footer.js';
-import Header from '../components/Header.js';
-import Link from '../components/Link.js'
+  import Link from 'next/link'
 
 function Overview() {
-    return (
-        <>
-            <Header/>
-            <Header/>
-            <div>
-                <Link></Link>
-            </div>
-            <Footer/>
-        </>
-    )
+  return(
+    <>
+      <Link href="/"><a>Return to Main page</a></Link>
+    </>
+  )
 }
 
-export default Overview;
+export default Overview
